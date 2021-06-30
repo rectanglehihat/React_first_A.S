@@ -9,7 +9,7 @@ import DictionaryList from "./DictionaryList";
 import Spinner from "./Spinner";
 
 import { connect } from 'react-redux';
-import { loadDictionary, createDictionary, loadDictFB, addDictFB } from "./redux/modules/dictionary";
+import { loadDictFB, addDictFB } from "./redux/modules/dictionary";
 
 
 // 리덕스의 스토어가 가진 상태값을 props로 받아오기 위한 함수예요.
