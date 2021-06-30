@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import img from './plusIcon.png'
 import { withRouter } from "react-router";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 const DictionaryList = (props) => {

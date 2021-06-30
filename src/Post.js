@@ -1,9 +1,7 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { createBrowserHistory } from "history";
-
-import { createDictionary, addDictFB } from './redux/modules/dictionary';
+import { addDictFB } from './redux/modules/dictionary';
 
 
 const Post = (props) => {
