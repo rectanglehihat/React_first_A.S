@@ -1,10 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components";
 
 import img from './plusIcon.png'
 import { withRouter } from "react-router";
 import { useSelector, useDispatch } from 'react-redux';
-import { loadDictFB } from "./redux/modules/dictionary";
 
 
 const DictionaryList = (props) => {
@@ -12,18 +11,18 @@ const DictionaryList = (props) => {
 
     return (
         <div>
-            <p>MY DICTIONARY</p>
-            {dict_list.map((dict) => {
+            <Board>MY DICTIONARY</Board>
+            {dict_list.map((item) => {
                 return (
-                    <Card key={dict.id}>
+                    <Card key={item.id}>
                         <Title>단어</Title>
-                        <Contents>{dict.word}</Contents>
+                        <Contents>{item.word}</Contents>
 
                         <Title>설명</Title>
-                        <Contents>{dict.description}</Contents>
+                        <Contents>{item.description}</Contents>
 
                         <Title>예시</Title>
-                        <Contents><span>{dict.example}</span></Contents>
+                        <Contents><span>{item.example}</span></Contents>
                     </Card>
                 )
             })}    
@@ -34,14 +33,22 @@ const DictionaryList = (props) => {
     );
 }
 
-const Card = styled.div`
-  max-width: 400px;
-  min-height: 0px;
-  background-color: #FCF6F5;
+const Board = styled.div`
+    width: 90vw;
+    margin: 12px auto;
+`;
 
-  text-align: left;
-  padding: 10px;
-  margin: 0 0 10px 0;
+const Card = styled.div`
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #FCF6F5;
+
+    text-align: left;
+    padding: 10px 10px;
+    margin: 8px auto;
 `;
 
 const Title = styled.p`
@@ -61,9 +68,14 @@ const Icon = styled.div`
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     & > img {
-        max-width: 50px;
+        width: 50px;
+        height: 50px;
     }
 `;
 

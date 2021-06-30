@@ -1,77 +1,88 @@
 import React, { useRef } from 'react'
-import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import { createBrowserHistory } from "history";
 
-import { loadDictionary, createDictionary } from './redux/modules/dictionary';
+import { createDictionary, addDictFB } from './redux/modules/dictionary';
 
 
 const Post = (props) => {
     const dispatch = useDispatch();
-    const history = createBrowserHistory();
     
     const wordInput = useRef();
     const descriptionInput = useRef();
     const exampleInput = useRef();
 
-    const addDict = (e) => {
-        const word = wordInput.current.value;
-        const description = descriptionInput.current.value;
-        const example = exampleInput.current.value;
+    const addDict = () => {
+        const card = {
+            word: wordInput.current.value,
+            description: descriptionInput.current.value,
+            example: exampleInput.current.value,
+        }
 
-        const dict = {
-            word: word,
-            description: description,
-            example: example,
-        };
-        console.log(dict)
-
-        dispatch(createDictionary(dict));
-        history.goBack();
+        dispatch(addDictFB(card));
+        props.history.push('/');
     }
 
     return (
         <div>
-            <p>ADD DICTIONARY</p>
+            <Board>ADD DICTIONARY</Board>
             <Card>
-                <Title>단어</Title>
-                <Input type="text" ref={wordInput}/>
+                <p>단어</p>
+                <input type="text" ref={wordInput}/>
             </Card>
             <Card>
-                <Title>설명</Title>
-                <Input type="text" ref={descriptionInput}/>
+                <p>설명</p>
+                <input type="text" ref={descriptionInput}/>
             </Card>
             <Card>
-                <Title>예시</Title>
-                <Input type="text" ref={exampleInput}/>
+                <p>예시</p>
+                <input type="text" ref={exampleInput}/>
             </Card>
             <Button onClick={addDict}>추가하기</Button>
         </div>
     );
 }
 
-const Card = styled.div`
-    max-width: 400px;
-    min-height: 100px;
-    background-color: #FCF6F5;
+const Board = styled.div`
+    width: 90vw;
+    margin: 12px auto;
+`;
 
+const Card = styled.div`
+    width: 90vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #FCF6F5;
     text-align: left;
     padding: 10px;
-    margin: 10px 0 20px 0;
-`;
+    margin: 10px auto 20px auto;
 
-const Title = styled.p`
-    font-size: 11px;
-    text-decoration: underline;
-    margin: 0px 0px 2px 0px;
-`;
-
-const Input =styled.input`
-    width: 95%;
+    & > p {
+        text-decoration: underline;
+        font-size: 8px;
+        color: #888888;
+        margin: 4px 0px;
+      }
+    
+      & > input {
+        border: 1px solid #000000;
+        width: 100%;
+        padding: 2px 4px;
+        margin: 4px 0px;
+        box-sizing: border-box;
+      }
 `;
 
 const Button = styled.button`
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px 0px;
+    margin: auto;
+    font-size: 16px;
 `;
 
 export default Post;
