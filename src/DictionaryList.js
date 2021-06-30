@@ -12,17 +12,17 @@ const DictionaryList = (props) => {
     return (
         <div>
             <Board>MY DICTIONARY</Board>
-            {dict_list.map((item) => {
+            {dict_list.map((w) => {
                 return (
-                    <Card key={item.id}>
+                    <Card key={w.id}>
                         <Title>단어</Title>
-                        <Contents>{item.word}</Contents>
+                        <Contents>{w.word}</Contents>
 
                         <Title>설명</Title>
-                        <Contents>{item.description}</Contents>
+                        <Contents>{w.description}</Contents>
 
                         <Title>예시</Title>
-                        <Contents><span>{item.example}</span></Contents>
+                        <Contents><span>{w.example}</span></Contents>
                     </Card>
                 )
             })}    

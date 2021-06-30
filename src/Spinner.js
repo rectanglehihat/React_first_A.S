@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const Spinner = (props) => {
     return (
-        <Outter>
+        <Wrap>
             <div style={{fontSize: "150px", color: "#673ab7"}}>메롱</div>
-        </Outter>
+        </Wrap>
     )
 }
 
-const Outter = styled.div`
+const Wrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;

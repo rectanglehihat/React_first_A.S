@@ -11,7 +11,7 @@ const Post = (props) => {
     const descriptionInput = useRef();
     const exampleInput = useRef();
 
-    const addDict = () => {
+    const addCard = () => {
         const card = {
             word: wordInput.current.value,
             description: descriptionInput.current.value,
@@ -37,7 +37,7 @@ const Post = (props) => {
                 <p>예시</p>
                 <input type="text" ref={exampleInput}/>
             </Card>
-            <Button onClick={addDict}>추가하기</Button>
+            <Button onClick={addCard}>추가하기</Button>
         </div>
     );
 }

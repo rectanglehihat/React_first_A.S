@@ -34,7 +34,7 @@ export const loadDictionary = (dict) => {
 export const createDictionary = (dict) => {
     return {type: CREATE, dict};
 };
-export const isFinshed = (loaded) => {
+export const isFinished = (loaded) => {
   return {type: FINISH, loaded}
 };
 
@@ -61,12 +61,12 @@ export const loadDictFB = () => {
 
   export const addDictFB = (dict) => {
     return function (dispatch) {
-      dispatch(isFinshed(false));
+      dispatch(isFinished(false));
 
       dict_db.add(dict).then((docRef) => {
           let dict_data = { ...dict, id: docRef.id };  
           dispatch(createDictionary(dict_data));
-          dispatch(isFinshed(true));
+          dispatch(isFinished(true));
         })
         .catch((err) => {
           window.alert('오류가 났네요! 나중에 다시 시도해주세요!');

@@ -9,7 +9,7 @@ export const history = createBrowserHistory();
 const middlewares = [thunk];
 const enhancer = applyMiddleware(...middlewares);
 
-const rootReducer = combineReducers({dictionary});
+const rootReducer = combineReducers({ dictionary });
 
 const store = createStore(rootReducer, enhancer);
 

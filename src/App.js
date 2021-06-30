@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
 import { withRouter } from "react-router";
 import { Route, BrowserRouter } from "react-router-dom";
-
 import Post from "./Post";
 import DictionaryList from "./DictionaryList";
 import Spinner from "./Spinner";
-
 import { connect } from 'react-redux';
 import { loadDictFB, addDictFB } from "./redux/modules/dictionary";
 
