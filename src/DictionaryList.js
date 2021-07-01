@@ -37,6 +37,7 @@ const DictionaryList = (props) => {
 const BD = styled.div`
     width: 100%;
     height: 80px;
+    margin: 0 0 50px 0;
 
     background: linear-gradient(to right, #7474BF, #348AC7);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -52,13 +53,6 @@ const BD = styled.div`
         font-size: 30px;
         color: #FCF6F5;
     }
-`;
-
-const Board = styled.h1`
-    width: 90vw;
-    margin: 50px auto 30px auto;
-    font-size: 30px;
-    color: #FCF6F5;
 `;
 
 const Card = styled.div`
