@@ -37,7 +37,6 @@ componentDidMount() {
 }
 
   render() {
-    console.log(this.props.is_loaded);
 
     return (
       <div className="App">

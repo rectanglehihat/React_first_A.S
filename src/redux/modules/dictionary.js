@@ -46,9 +46,6 @@ export const loadDictFB = () => {
     dict_db.get().then((docs) => {
         let dict_data = [];  // 리덕스에 넣고 쓸거니까 빈 배열 생성 
         docs.forEach((doc) => {
-          console.log(doc);
-          console.log(doc.data());
-          console.log(doc.id);
 
           if(doc.exists){
             dict_data = [...dict_data, {id: doc.id, ...doc.data()}]
