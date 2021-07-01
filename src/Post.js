@@ -24,7 +24,7 @@ const Post = (props) => {
 
     return (
         <div>
-            <Board>ADD DICTIONARY</Board>
+            <Board>아무말 더하기</Board>
             <Card>
                 <p>단어</p>
                 <input type="text" ref={wordInput}/>
@@ -42,34 +42,45 @@ const Post = (props) => {
     );
 }
 
-const Board = styled.div`
+const Board = styled.h1`
     width: 90vw;
-    margin: 12px auto;
+    margin: 50px auto 30px auto;
+    font-size: 30px;
+    color: #FCF6F5;
 `;
 
 const Card = styled.div`
-    width: 90vw;
+    width: 86vw;
     height: auto;
     display: flex;
     flex-direction: column;
+
     background-color: #FCF6F5;
+    border-radius: 25px 0 25px 0;
+
     text-align: left;
-    padding: 10px;
-    margin: 10px auto 20px auto;
+    padding: 15px 15px;
+    margin: 10px auto 15px auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
     & > p {
-        text-decoration: underline;
-        font-size: 8px;
+        font-size: 13px;
         color: #888888;
-        margin: 4px 0px;
+        margin: 0px 0px 2px 0px;
       }
     
       & > input {
-        border: 1px solid #000000;
+        border: 1px solid #7b9acc;
         width: 100%;
-        padding: 2px 4px;
+        padding: 10px 20px;
         margin: 4px 0px;
         box-sizing: border-box;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #FCF6F5;
+        }
       }
 `;
 
@@ -78,9 +89,16 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: 10px 0px;
-    margin: auto;
-    font-size: 16px;
+    padding: 10px 10px;
+    margin: 35px auto;
+    font-size: 14px;
+
+    width: 40vw;
+    height: auto;
+    border-radius: 25px;
+    border: none;
+    background-color: #FCF6F5;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 `;
 
 export default Post;

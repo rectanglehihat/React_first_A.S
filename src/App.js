@@ -32,14 +32,13 @@ class App extends React.Component{
     this.state = null;
   };
 
-  componentDidMount() {
-    this.props.load();
-  }
-
+componentDidMount() {
+  this.props.load();
+}
 
   render() {
     console.log(this.props.is_loaded);
-    
+
     return (
       <div className="App">
         {!this.props.is_loaded? <Spinner/> : 
@@ -47,7 +46,7 @@ class App extends React.Component{
             <Container>
               <Route path="/" exact component={DictionaryList}/>
               <Route path="/post" component={Post}/>
-          </Container>
+            </Container>
          </BrowserRouter>
         }
       </div>
@@ -57,7 +56,6 @@ class App extends React.Component{
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
   display: flex;
   background-color: #7b9acc;
   flex-direction: column;

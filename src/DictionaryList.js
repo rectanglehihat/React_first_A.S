@@ -11,7 +11,9 @@ const DictionaryList = (props) => {
 
     return (
         <div>
-            <Board>MY DICTIONARY</Board>
+            <BD>
+                <h1>아무말 사전</h1>
+            </BD>
             {dict_list.map((w) => {
                 return (
                     <Card key={w.id}>
@@ -26,41 +28,68 @@ const DictionaryList = (props) => {
                     </Card>
                 )
             })}    
-    
             <Icon onClick={() => {props.history.push('/post')}}><img src={img} alt="Button"/></Icon>
-
         </div>
     );
 }
 
-const Board = styled.div`
+
+const BD = styled.div`
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient(to right, #7474BF, #348AC7);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 0 0 35px 35px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > h1 {
+        margin: 0;
+        text-align: center;
+        width: 90vw;
+        font-size: 30px;
+        color: #FCF6F5;
+    }
+`;
+
+const Board = styled.h1`
     width: 90vw;
-    margin: 12px auto;
+    margin: 50px auto 30px auto;
+    font-size: 30px;
+    color: #FCF6F5;
 `;
 
 const Card = styled.div`
-    width: 90vw;
+    width: 86vw;
     height: auto;
     display: flex;
     flex-direction: column;
 
     background-color: #FCF6F5;
+    border-radius: 25px 0 25px 0;
 
     text-align: left;
-    padding: 10px 10px;
-    margin: 8px auto;
+    padding: 15px 15px;
+    margin: 25px auto;
+    box-sizing: border-box;
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `;
 
 const Title = styled.p`
-    font-size: 11px;
-    text-decoration: underline;
+    font-size: 13px;
+    color: #888888;
     margin: 0px 0px 2px 0px;
 `;
 
 const Contents = styled.div`
     margin: 0px 0px 16px 0px;
+    font-weight: bold;
+    color: #333D79;
     & > span {
-        color: blue;
+        color: #97BC62;
     }
 `;
 
