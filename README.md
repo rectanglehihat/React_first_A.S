@@ -39,7 +39,7 @@
   * 리덕스 사용으로 상태 관리를 컴포넌트 밖에서 한다.
   * 리덕스 모듈을 js파일로 만든다.
     - Action: 데이터 변경 시 발생(액션은 객체) -> dispatch함수로 Action을 스토어에 전달함
-    - initioalState: is_loaded: false를 추가해(리듀서는 true) 새로고침시 initioalState가 안보이도록 한다.
+    - initialState: is_loaded: false를 추가해(리듀서는 true) 새로고침시 initioalState가 안보이도록 한다.
     - Action Creators: export해서 쓸 때 액션 블러오는 함수 
     - Reducer
         + 리덕스에 저장된 상태(데이터) 변경 함수로 state(현재상태)와 action(액션객체)를 파라미터로 받는다.
